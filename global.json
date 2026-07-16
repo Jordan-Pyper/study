@@ -3,9 +3,13 @@
   "configs": {
     "basic-questionnaire-study": {
       "path": "basic-questionnaire-study/config.json"
+    },
+    "tutorial": {
+      "path": "tutorial/config.json"
     }
   },
   "configsList": [
-    "basic-questionnaire-study"
+    "basic-questionnaire-study",
+    "tutorial"
   ]
 }
