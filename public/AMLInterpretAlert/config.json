@@ -1,0 +1,89 @@
+{
+    "$schema": "https://raw.githubusercontent.com/revisit-studies/study/main/src/parser/StudyConfigSchema.json",
+    "studyMetadata": {
+        "title": "AML Alert Interpretability Study",
+        "version": "pilot",
+        "authors": [
+            "Jordan Pyper",
+            "Jason Wiese",
+            "Vivek Srikumar"
+        ],
+        "date": "2026-08-24",
+        "description": "A Study of Outcomes of Interpretability Methods in the AML Domain",
+        "organizations": [
+            "University of Utah"
+        ]
+    },
+    "uiConfig": {
+        "contactEmail": "jordan.pyper@utah.edu",
+        "helpTextPath": "AMLInterpretAlert/assets/help.md",
+        "logoPath": "revisitAssets/revisitLogoSquare.svg",
+        "withProgressBar": true,
+        "autoDownloadStudy": false,
+        "withSidebar": true
+    },
+    "components": {
+        "introduction": {
+            "type": "markdown",
+            "path": "AMLInterpretAlert/assets/introduction.md",
+            "response": []
+        },
+        "consent": {
+      "type": "markdown",
+      "path": "AMLInterpretAlert/assets/AMLSurveyConsent.md",
+      "nextButtonText": "I agree",
+      "response": []
+        },
+        "respondentInformation": {
+            "type": "questionnaire",
+            "response": [
+                {
+                    "id": "first-name",
+                    "prompt": "What is your first name?",
+                    "required": true,
+                    "location": "aboveStimulus",
+                    "type": "shortText",
+                    "placeholder": "Please enter your first name"
+                },
+                {
+                "id": "respAge",
+                "type": "numerical",
+                "required": true,
+                "prompt": "What is your age?"
+                }
+            ]
+        },
+        "InstitutionInformation": {
+            "type": "questionnaire",
+            "response": [
+                {
+                    "id": "jobTitle",
+                    "prompt": "What is your role at your financial institution?",
+                    "required": true,
+                    "location": "aboveStimulus",
+                    "type": "shortText",
+                    "placeholder": "Please enter your job title"
+                },
+                {
+                    "id": "q3-satisfaction",
+                    "prompt": "Rate your satisfaction with this survey from 1 (not enjoyable) to 5 (very enjoyable).",
+                    "required": true,
+                    "location": "aboveStimulus",
+                    "type": "likert",
+                    "leftLabel": "Not Enjoyable",
+                    "rightLabel": "Very Enjoyable",
+                    "numItems": 5
+                }
+            ]
+        }
+    },
+    "sequence": {
+        "order": "fixed",
+        "components": [
+            "introduction",
+            "consent",
+            "respondentInformation",
+            "InstitutionInformation"
+        ]
+    }
+}
