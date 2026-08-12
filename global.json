@@ -6,10 +6,14 @@
     },
     "tutorial": {
       "path": "tutorial/config.json"
+    },
+    "AMLInterpretAlert": {
+      "path": "AMLInterpretAlert/config.json"
     }
   },
   "configsList": [
     "basic-questionnaire-study",
-    "tutorial"
+    "tutorial",
+    "AMLInterpretAlert"
   ]
 }
