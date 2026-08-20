@@ -29,10 +29,10 @@
             "response": []
         },
         "consent": {
-      "type": "markdown",
-      "path": "AMLInterpretAlert/assets/AMLSurveyConsent.md",
-      "nextButtonText": "I agree",
-      "response": []
+            "type": "markdown",
+            "path": "AMLInterpretAlert/assets/AMLSurveyConsent.md",
+            "nextButtonText": "I agree",
+            "response": []
         },
         "respondentInformation": {
             "type": "questionnaire",
@@ -65,6 +65,15 @@
                     "placeholder": "Please enter your job title"
                 },
                 {
+                    "id": "vendSol",
+                    "prompt": "Does your institution use an AML vendor solution?",
+                    "location": "aboveStimulus",
+                    "type": "dropdown",
+                    "default": "Yes",
+                    "placeholder": "Vendor Solution?",
+                    "options": ["Yes", "No"]
+                },
+                {
                     "id": "q3-satisfaction",
                     "prompt": "Rate your satisfaction with this survey from 1 (not enjoyable) to 5 (very enjoyable).",
                     "required": true,
@@ -75,15 +84,74 @@
                     "numItems": 5
                 }
             ]
+        },
+        "blackBoxCase": {
+            "baseComponent": "base-alert-trial",
+            "path": "AMLInterpretAlert/assets/BlackBoxTask.md"
         }
     },
+    "baseComponents": {
+        "base-alert-trial": {
+        "type": "markdown",
+        "response": [
+        {
+          "id": "alert_disposition",
+          "prompt": "What is your investigative disposition for this alert?",
+          "type": "radio",
+          "location": "sidebar",
+          "required": true,
+          "options": [
+            "Escalate (File SAR / Tier 2 Review)",
+            "Dismiss / Close Alert (False Positive)",
+            "Request Additional KYC / RFI"
+          ]
+        },
+        {
+          "id": "decision_confidence",
+          "prompt": "How confident are you in this decision?",
+          "type": "radio",
+          "location": "sidebar",
+          "required": true,
+          "options": [
+            "1 - Not at all confident",
+            "2 - Slightly confident",
+            "3 - Moderately confident",
+            "4 - Very confident",
+            "5 - Completely confident"
+          ]
+        },
+        {
+          "id": "explanation_utility",
+          "prompt": "The provided model explanation was clear and directly influenced my disposition:",
+          "type": "radio",
+          "location": "sidebar",
+          "required": true,
+          "options": [
+            "1 - Strongly Disagree",
+            "2 - Disagree",
+            "3 - Neutral",
+            "4 - Agree",
+            "5 - Strongly Agree"
+          ]
+        },
+        {
+          "id": "investigator_rationale",
+          "prompt": "Briefly state the primary evidence or model output that drove your decision:",
+          "type": "longText",
+          "location": "sidebar",
+          "required": false
+        }
+      ]
+    }
+  },
     "sequence": {
         "order": "fixed",
         "components": [
             "introduction",
             "consent",
             "respondentInformation",
-            "InstitutionInformation"
+            "InstitutionInformation",
+            "blackBoxCase"
         ]
     }
 }
