@@ -88,6 +88,10 @@
         "blackBoxCase": {
             "baseComponent": "base-alert-trial",
             "path": "AMLInterpretAlert/assets/BlackBoxTask.md"
+        },
+        "counterFactualCase": {
+            "baseComponent": "base-alert-trial",
+            "path": "AMLInterpretAlert/assets/CounterFactualTask.md"
         }
     },
     "baseComponents": {
@@ -151,7 +155,8 @@
             "consent",
             "respondentInformation",
             "InstitutionInformation",
-            "blackBoxCase"
+            "blackBoxCase",
+            "counterFactualCase"
         ]
     }
 }
