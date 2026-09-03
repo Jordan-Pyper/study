@@ -1,4 +1,6 @@
 # AML Transaction Alert
+The table below provides information regarding a transaction that the model has identified as suspicious. The data features are those that appear in the top 12 most important features as reported by the model. All others are excluded.
+
 |Features             |Value               |
 |:--------------------|:-------------------|
 |Payment.Format       |ACH                 |
@@ -16,7 +18,25 @@
 |Bank Name            |China Bank #9       |
 |Entity Name          |Corporation #199303 |
 
-# Columns Definitions
+# Varirable Importance from XGBoost ML model - Top 12 Predictors
+The machine learning algorithm provided a set of the most "important" or influential varirables when the model was fit. The top 12 of these is provided below. This is give the investigator some context for the primary factors considered by the model when triggering an alert. Please review the **column definitions** below to understand what the feature names mean and how they can be interpreted.
+
+| Feature | Permutation_Importance |
+| :--- | :--- |
+| Payment Format_ACH | 0.043290 |
+| source_ratio_out | 0.004268 |
+| dest_ratio_in | 0.003352 |
+| AmountPaid | 0.002374 |
+| source_fan_out | 0.002267 |
+| dest_fan_in | 0.002196 |
+| Amount Received | 0.002038 |
+| source_deg_out | 0.001551 |
+| fan_out_bins_2-3 | 0.001527 |
+| source_sum_col4_out | 0.001509 |
+| source_skew_col4_out | 0.001303 |
+| source_avg_col4_out | 0.001138 |
+
+# Column Definitions
 ### Payment & Transaction Values
 * **Payment Format_ACH**: A binary flag indicating whether the transaction was processed as an Automated Clearing House (ACH) electronic transfer rather than a wire, check, credit card, or cash.  
 * **AmountPaid**: The gross dollar amount sent by the originator for this specific transaction.  
@@ -35,23 +55,10 @@
 * **source_avg_col4_out**: The historical average (mean) transaction amount sent by the source account.  
 * **source_skew_col4_out**: The statistical skewness (asymmetry) of the sender's outbound transaction amounts. A high skewness indicates an account that normally sends small amounts but occasionally exhibits an unusually massive spike in transfer size.
 
-# Varirable Importance from XGBoost ML model - Top 12 Predictors
-| Feature | Permutation_Importance |
-| :--- | :--- |
-| Payment Format_ACH | 0.043290 |
-| source_ratio_out | 0.004268 |
-| dest_ratio_in | 0.003352 |
-| AmountPaid | 0.002374 |
-| source_fan_out | 0.002267 |
-| dest_fan_in | 0.002196 |
-| Amount Received | 0.002038 |
-| source_deg_out | 0.001551 |
-| fan_out_bins_2-3 | 0.001527 |
-| source_sum_col4_out | 0.001509 |
-| source_skew_col4_out | 0.001303 |
-| source_avg_col4_out | 0.001138 |
+
 
 # Transaction History
+This is the history of transactions for this particular Account. This is to provide an investigator with some potential context for the transactions.
 
 |         |Timestamp           |Account   |Receiving Account |From Bank |To Bank |Payment Format | source_ratio_out| dest_ratio_in|  Amount Paid| source_fan_out| dest_fan_in| Amount Received| source_deg_out| fan_out_bins_2.3| source_sum_col4_out| source_skew_col4_out| source_avg_col4_out|
 |:--------|:-------------------|:---------|:----------------|:--------|:------|:-------------|----------------:|-------------:|-----------:|--------------:|-----------:|--------------:|--------------:|----------------:|-------------------:|--------------------:|-------------------:|

@@ -1,4 +1,6 @@
 # AML Transaction Alert
+The table below provides information regarding a transaction that the model has identified as suspicious. The data features are those that are used by the decision tree. All others are excluded. Please review the **Feature Definitions** below to understand what the feature names mean and how they can be interpreted.
+
 |Features         |Value            |
 |:----------------|:----------------|
 |Payment Format   |ACH              |
@@ -35,6 +37,7 @@ A decision tree is a predictive model that makes decisions by following a flowch
 - *The Fraud Typology*: Even if an account doesn't trigger the "Gathering Pool" alert (low fan-in), receiving a massive, outlier payday is a major red flag. This node is designed to catch high-value, low-frequency events like a targeted wire fraud payment, a business email compromise (BEC) settlement, or a ransomware payout, where the illicit transfer occurs in a single, massive lump sum rather than a distributed pool. 
 
 # Transaction History
+This is the history of transactions for this particular Account. This is to provide an investigator with some potential context for the transactions.
 
 |         |Timestamp           |Account   |ReceivingAccount |FromBank |ToBank |PaymentFormat | dest_fan_in| source_ratio_out| dest_ratio_in| dest_max_col4_in|
 |:--------|:-------------------|:---------|:----------------|:--------|:------|:-------------|-----------:|----------------:|-------------:|----------------:|
