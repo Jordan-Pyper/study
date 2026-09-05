@@ -74,14 +74,10 @@
                     "options": ["Yes", "No"]
                 },
                 {
-                    "id": "q3-satisfaction",
-                    "prompt": "Rate your satisfaction with this survey from 1 (not enjoyable) to 5 (very enjoyable).",
-                    "required": true,
-                    "location": "aboveStimulus",
-                    "type": "likert",
-                    "leftLabel": "Not Enjoyable",
-                    "rightLabel": "Very Enjoyable",
-                    "numItems": 5
+                "id": "teamSize",
+                "type": "numerical",
+                "required": true,
+                "prompt": "What is the approximate size of your AML investigations team?"
                 }
             ]
         },
@@ -92,6 +88,10 @@
         "counterFactualCase": {
             "baseComponent": "base-alert-trial",
             "path": "AMLInterpretAlert/assets/CounterFactualTask.md"
+        },
+        "gosdtCase": {
+            "baseComponent": "base-alert-trial",
+            "path": "AMLInterpretAlert/assets/gosdtTask.md"
         }
     },
     "baseComponents": {
@@ -125,6 +125,32 @@
           ]
         },
         {
+          "id": "investigator_rationale",
+          "prompt": "Briefly state the primary evidence or model output that drove your decision:",
+          "type": "longText",
+          "location": "sidebar",
+          "required": false
+        },
+        {
+            "id": "understandExp",
+            "prompt": "Did the model explanation make sense to you?",
+            "location": "sidebar",
+            "type": "dropdown",
+            "default": "Yes",
+            "required": true,
+            "placeholder": "Did it make sense?",
+            "options": ["Yes", "No"]
+        },
+        {
+            "id": "expHelpful",
+            "prompt": "Did you find the model explanation helpful?",
+            "location": "sidebar",
+            "type": "dropdown",
+            "default": "Yes",
+            "placeholder": "Useful Explanation?",
+            "options": ["Yes", "No"]
+        },
+        {
           "id": "explanation_utility",
           "prompt": "The provided model explanation was clear and directly influenced my disposition:",
           "type": "radio",
@@ -139,8 +165,15 @@
           ]
         },
         {
-          "id": "investigator_rationale",
-          "prompt": "Briefly state the primary evidence or model output that drove your decision:",
+          "id": "whyHelpful",
+          "prompt": "How was the model explanation helpful or unhelpful?",
+          "type": "longText",
+          "location": "sidebar",
+          "required": false
+        },
+        {
+          "id": "feedback",
+          "prompt": "Do you have any feedback or suggestions regarding the model explanations?",
           "type": "longText",
           "location": "sidebar",
           "required": false
@@ -156,7 +189,8 @@
             "respondentInformation",
             "InstitutionInformation",
             "blackBoxCase",
-            "counterFactualCase"
+            "counterFactualCase",
+            "gosdtCase"
         ]
     }
 }
