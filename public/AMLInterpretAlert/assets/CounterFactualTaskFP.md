@@ -1,7 +1,22 @@
 # AML Transaction Alert
 The table below provides information regarding a transaction that the model has identified as suspicious. The data features are those that are more frequently used to generate counterfactual examples. All others are excluded. Please review the **column definitions** below to understand what the feature names mean and how they can be interpreted.
 
-
+|Features            | Value                  |
+|:-------------------|:-----------------------|
+|dest_ratio_in       |9.666667                |
+|dest_max_col4_in    |68711.27                |
+|dest_sum_col4_in    |1892556                 |
+|AmountReceived      |14525.48                |
+|PaymentFormat_ACH   |1                       |
+|AmountPaid          |17020.71                |
+|dest_avg_col4_in    |32630.28                |
+|dest_deg_in         |58                      |
+|source_avg_col4_out |15773.1                 |
+|dest_ratio_out      |1                       |
+|source_ratio_out    |1                       |
+|source_deg_in       |0                       |
+|BankName            |Savings Bank of Newport |
+|EntityType          |SoleProprietorship      |
 
 # Variable Definitions
 
@@ -33,15 +48,21 @@ A counterfactual explanation explains a machine learning prediction by showing t
 Rather than describing the internal math or weights of the model, a counterfactual provides an intuitive, hypothetical "what-if" scenario.
 
 # Counter Factual Differences
-This tables provides the difference between counterfactual cases and the AML transaction alert. This way it is easy to see what changed in the counterfactual case, compared to the transaction alert that would make the model no longer think the transaction is suspicious. Positive numbers represents an increase compared to the alert transaction and negative values represents a decrease compared to the alert transaction.
+This tables provides the difference between counterfactual cases and the AML transaction alert. This way it is easy to see what changed in the counterfactual case, compared to the transaction alert that would make the model no longer think the transaction is suspicious. Positive numbers represents an increase compared to the alert transaction and negative values represents a decrease compared to the alert transaction. The column *numChanged* provided the number of features that changed in the counterfactual case compared to the alert. *mathDist* is a mathematical measure of distance between the counterfactual case and the alert case.
 
 | dest_ratio_in| dest_max_col4_in| dest_sum_col4_in| AmountReceived| PaymentFormat_ACH| AmountPaid| dest_avg_col4_in| dest_deg_in| source_avg_col4_out| dest_ratio_out| source_ratio_out| source_deg_in| numChanged| mathDist|
 |-------------:|----------------:|----------------:|--------------:|-----------------:|----------:|----------------:|-----------:|-------------------:|--------------:|----------------:|-------------:|----------:|--------:|
-|          0.00|                0|                0|              0|                -1|          0|             0.00|           0|                 0.0|            -33|             0.00|             0|          2|     0.01|
-|          0.00|                0|                0|              0|                -1|          0|             0.00|           0|                 0.0|              0|             0.00|             0|          1|     0.01|
-|          0.00|                0|                0|              0|                -1|          0|         -6740.88|           0|                 0.0|            -33|             0.00|             0|          3|     0.01|
-|          0.00|                0|                0|              0|                -1|          0|             0.00|           0|           -119138.8|              0|             0.00|             0|          2|     0.01|
-|         22.85|                0|                0|              0|                 0|          0|             0.00|           0|                 0.0|              0|            15.86|             0|          2|     0.00|
+|             0|                0|                0|              0|                -1|          0|                0|           0|                   0|              0|             0.00|             0|          1|     0.01|
+|             0|                0|                0|              0|                 0|          0|                0|           0|                   0|              0|            15.67|             0|          2|     0.00|
+|             0|                0|                0|              0|                 0|          0|                0|           0|                   0|              0|            15.48|             0|          2|     0.00|
+|             0|                0|                0|              0|                 0|          0|                0|           0|                   0|              0|            29.84|             0|          2|     0.00|
+|             0|                0|                0|              0|                 0|          0|                0|           0|                   0|              0|            29.88|             0|          2|     0.00|
+
 
 # Treansaction History
 This is the history of transactions for this particular Account. This is to provide an investigator with some potential context for the transactions.
+
+|         |Timestamp           |Account   |ReceivingAccount |FromBank |ToBank | dest_ratio_in| dest_max_col4_in| dest_sum_col4_in| AmountReceived|PaymentFormat | AmountPaid| dest_avg_col4_in| dest_deg_in| source_avg_col4_out| dest_ratio_out| source_ratio_out| source_deg_in|
+|:--------|:-------------------|:---------|:----------------|:--------|:------|-------------:|----------------:|----------------:|--------------:|:-------------|----------:|----------------:|-----------:|-------------------:|--------------:|----------------:|-------------:|
+|23923966 |2022-09-13 10:06:00 |823963DD0 |816BE1AE0        |24816    |3      |      7.071429|       3068330.14|          3262020|       14525.48|ACH           |   14525.48|         32949.70|          99|             15773.1|           14.4|                1|             0|
+|23923967 |2022-09-13 10:06:00 |823963DD0 |823963DD0        |24816    |24816  |      9.666667|         68711.27|          1892556|       14525.48|ACH           |   17020.71|         32630.28|          58|             15773.1|            1.0|                1|             0|
