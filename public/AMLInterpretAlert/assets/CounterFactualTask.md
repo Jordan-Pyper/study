@@ -48,7 +48,7 @@ A counterfactual explanation explains a machine learning prediction by showing t
 Rather than describing the internal math or weights of the model, a counterfactual provides an intuitive, hypothetical "what-if" scenario.
 
 # Counter Factual Differences
-This tables provides the difference between counterfactual cases and the AML transaction alert. This way it is easy to see what changed in the counterfactual case, compared to the transaction alert that would make the model no longer think the transaction is suspicious. Positive numbers represents an increase compared to the alert transaction and negative values represents a decrease compared to the alert transaction.
+This tables provides the difference between counterfactual cases and the AML transaction alert. This way it is easy to see what changed in the counterfactual case, compared to the transaction alert that would make the model no longer think the transaction is suspicious. Positive numbers represents an increase compared to the alert transaction and negative values represents a decrease compared to the alert transaction. The column *numChanged* provided the number of features that changed in the counterfactual case compared to the alert. *mathDist* is a mathematical measure of distance between the counterfactual case and the alert case.
 
 | dest_ratio_in| dest_max_col4_in| dest_sum_col4_in| AmountReceived| PaymentFormat_ACH| AmountPaid| dest_avg_col4_in| dest_deg_in| source_avg_col4_out| dest_ratio_out| source_ratio_out| source_deg_in| numChanged| mathDist|
 |-------------:|----------------:|----------------:|--------------:|-----------------:|----------:|----------------:|-----------:|-------------------:|--------------:|----------------:|-------------:|----------:|--------:|
