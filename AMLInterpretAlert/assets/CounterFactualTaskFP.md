@@ -1,22 +1,7 @@
 # AML Transaction Alert
 The table below provides information regarding a transaction that the model has identified as suspicious. The data features are those that are more frequently used to generate counterfactual examples. All others are excluded. Please review the **column definitions** below to understand what the feature names mean and how they can be interpreted.
 
-| Feature            | Value             |
-|:-------------------|:------------------|
-|dest_ratio_in       |2                  |
-|dest_max_col4_in    |12987.54           |
-|dest_sum_col4_in    |41926.05           |
-|AmountReceived      |11637.54           |
-|PaymentFormat_ACH   |1                  |
-|AmountPaid          |11637.54           |
-|dest_avg_col4_in    |6987.675           |
-|dest_deg_in         |6                  |
-|source_avg_col4_out |375493.7           |
-|dest_ratio_out      |34                 |
-|source_ratio_out    |2                  |
-|source_deg_in       |10                 |
-|Bank Name           |Mexico Bank #759   |
-|Entity Type         |Sole Proprietorship |
+
 
 # Variable Definitions
 
@@ -60,9 +45,3 @@ This tables provides the difference between counterfactual cases and the AML tra
 
 # Treansaction History
 This is the history of transactions for this particular Account. This is to provide an investigator with some potential context for the transactions.
-
-|         |Timestamp           |Account   |ReceivingAccount |FromBank |ToBank  | dest_ratio_in| dest_max_col4_in| dest_sum_col4_in| AmountReceived|PaymentFormat | AmountPaid| dest_avg_col4_in| dest_deg_in| source_avg_col4_out| dest_ratio_out| source_ratio_out| source_deg_in|
-|:--------|:-------------------|:---------|:----------------|:--------|:-------|-------------:|----------------:|----------------:|--------------:|:-------------|----------:|----------------:|-----------:|-------------------:|--------------:|----------------:|-------------:|
-|2118281  |2022-09-01 06:30:00 |837CEB4B0 |837CEB4B0        |2152645  |2152645 |     10.500000|       1464362.37|       2160111.07|     1464362.37|Reinvestment  | 1464362.37|        51431.216|          42|            496779.2|              1|              1.5|             8|
-|14796109 |2022-09-07 22:12:00 |837CEB4B0 |837CEB500        |2152645  |2142469 |      1.666667|         12987.54|         30288.51|       12987.54|ACH           |   12987.54|         6057.702|           5|            496779.2|             28|              1.5|             8|
-|28432654 |2022-09-15 18:23:00 |837CEB4B0 |837CEB500        |2152645  |2142469 |      2.000000|         12987.54|         41926.05|       11637.54|ACH           |   11637.54|         6987.675|           6|            375493.7|             34|              2.0|            10|
