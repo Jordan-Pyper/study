@@ -106,8 +106,7 @@
           "required": true,
           "options": [
             "Escalate (File SAR / Tier 2 Review)",
-            "Dismiss / Close Alert (False Positive)",
-            "Request Additional KYC / RFI"
+            "Dismiss / Close Alert (False Positive)"
           ]
         },
         {
