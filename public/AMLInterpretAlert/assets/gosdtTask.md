@@ -16,7 +16,7 @@ A decision tree is a predictive model that makes decisions by following a flowch
 - **The Structure**: It starts at a single top rule (the root) and splits into branches based on each answer. Following the path through subsequent questions leads to an end point (a leaf), which provides the final prediction or classification.
 - **Why It Matters**: Unlike "black-box" machine learning models, decision trees are inherently transparent because you can directly trace the exact visual path and logic that produced an outcome.
 
-![DecisionTree](GOSDTdiagram.png)
+![DecisionTree](AMLInterpretAlert/assets/GOSDTdiagram.png)
 
 # Feature Definitions
 1. <span style="color: red;">dest_fan_in</span>
