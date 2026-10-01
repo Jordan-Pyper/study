@@ -78,6 +78,14 @@
                 "type": "numerical",
                 "required": true,
                 "prompt": "What is the approximate size of your AML investigations team?"
+                },
+                {
+                "id": "institutionLocation",
+                "prompt": "Where is the office from which you work located?",
+                "required": true,
+                "location": "aboveStimulus",
+                "type": "shortText",
+                "placeholder": "Please enter location here"
                 }
             ]
         },
@@ -85,13 +93,25 @@
             "baseComponent": "base-alert-trial",
             "path": "AMLInterpretAlert/assets/BlackBoxTask.md"
         },
+        "blackBoxCaseFP": {
+            "baseComponent": "base-alert-trial",
+            "path": "AMLInterpretAlert/assets/BlackBoxTaskFP.md"
+        },
         "counterFactualCase": {
             "baseComponent": "base-alert-trial",
             "path": "AMLInterpretAlert/assets/CounterFactualTask.md"
         },
+        "counterFactualCaseFP": {
+            "baseComponent": "base-alert-trial",
+            "path": "AMLInterpretAlert/assets/CounterFactualTaskFP.md"
+        },
         "gosdtCase": {
             "baseComponent": "base-alert-trial",
             "path": "AMLInterpretAlert/assets/gosdtTask.md"
+        },
+        "gosdtCaseFP": {
+            "baseComponent": "base-alert-trial",
+            "path": "AMLInterpretAlert/assets/gosdtTaskFP.md"
         }
     },
     "baseComponents": {
@@ -188,8 +208,11 @@
             "respondentInformation",
             "InstitutionInformation",
             "blackBoxCase",
+            "blackBoxCaseFP",
             "counterFactualCase",
-            "gosdtCase"
+            "counterFactualCaseFP",
+            "gosdtCase",
+            "gosdtCaseFP"
         ]
     }
 }
